@@ -535,8 +535,7 @@ ul.notifications > li > .more:hover, ul.notifications > li > .more:focus {
     margin-right: 6px;
 }
 
-.dropdown-menu .
- > a, .dropdown-menu .active > a:focus, .dropdown-menu .active > a:hover {
+.dropdown-menu .active > a, .dropdown-menu .active > a:focus, .dropdown-menu .active > a:hover {
     background-color: #00AAFF;
 }
 
@@ -881,7 +880,7 @@ fieldset[disabled] .btn {
 .panel .panel-heading .panel-title {
     margin: 0;
 }
-/* 
+
 .panel .panel-heading button {
     padding: 0;
     margin-left: 5px;
@@ -892,11 +891,11 @@ fieldset[disabled] .btn {
 
 .panel .panel-heading button i {
     font-size: 14px;
-} */
+}
 
 .panel .panel-body {
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 .panel .panel-note {
@@ -1079,3 +1078,4 @@ label {
     width: 100px;
     height: 100px;
 }
+
