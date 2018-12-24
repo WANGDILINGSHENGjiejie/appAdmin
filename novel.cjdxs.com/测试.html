@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    .nav{
+	width:600px;
+	padding-left:20px;
+	background-color:#000;}
+.nav>ul>li{   /*代表只选取子元素，而不是后代元素*/
+	float:left;
+	}
+.nav ul ul{
+	position:absolute;
+	display:none;
+	z-index:10;
+	}
+.nav>ul>li:hover ul{
+	display:block;
+	}
+.nav a{
+	display:block;
+	padding:10px 20px;
+	background-color:#000;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;
+	white-space:nowrap;/*强制文字不换行*/
+	transition:background-color .2s linear;
+	}
+.nav a:hover,.nav a.current,.nav>ul>li:hover>a{
+	background-color:#E92E74;}
+    
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul class="clearfix">
+            <li><a href="#" class="current">首页</a></li>
+            <li><a href="#">创意素材</a>
+                <ul>
+                    <li><a href="#">psd原稿</a></li>
+                <li><a href="#">javascript特效</a></li>
+                <li><a href="#">矢量素材</a></li>
+                </ul>
+            </li>
+            <li><a href="#">作品</a>
+                <ul>
+                    <li><a href="#">psd原稿</a></li>
+                <li><a href="#">javascript特效</a></li>
+                <li><a href="#">矢量素材</a></li>
+                </ul>
+            
+            </li>
+            <li><a href="#">视频</a></li>
+            <li><a href="#">论坛</a></li>     
+        </ul>
+    </div>
+</body>
+</html>

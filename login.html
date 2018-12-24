@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html lang="en" class="fullscreen-bg">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>笔墨文学-后台管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="static/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="static/js/klorofil-common.js"></script>
+    <script type="text/javascript" src="static/js/comm.js"></script>
+    <script type="text/javascript" src="static/js/moment.min.js"></script>
+    <script type="text/javascript" src="static/js/moment_zh-cn.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap-datetimepicker-4.17.min.js"></script>
+    <script type="text/javascript" src="static/js/echarts.min.js"></script>
+    <script src="static/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/css.css">
+    <link rel="stylesheet" href="static/css/media.css">
+    <link rel="stylesheet" href="static/css/bootstrap-datetimepicker-4.17.min.css">
+    <link rel="stylesheet" href="static/css/toastr.min.css">
+</head>
+<style type="text/css">
+    .auth-box .content {
+        width: 82%;
+        margin-left: 9%;
+
+    }
+    .auth-box {
+        margin: 0;
+        height: 485px;
+        /*margin-right: 36%;*/
+        /*background: #f5f5f5e3;*/
+        /*background: rgba(0,0,0,.7);*/
+    }
+
+
+    input:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 100px white inset;
+        -webkit-text-fill-color: #666;
+    }
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow:0 0 0 100px white inset;
+        -webkit-text-fill-color: #666;
+    }
+    .form-group {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .form-group i {
+        position: absolute;
+        top:12px;
+        left:8px;
+        color:#124B86;
+        font-size:20px;
+    }
+    .form-control {
+        padding-left:25px;
+        -moz-box-shadow:inset 0px 2px 6px 0 rgba(82, 125, 170, 0.5);
+        -webkit-box-shadow:inset 0px 2px 6px 0 rgba(82, 125, 170, 0.5);
+        box-shadow:inset 0px 2px 6px 0 rgba(82, 125, 170, 0.5);
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        border-color: #527DAA;
+        background-color: #fff;
+        border-width: 1px;
+        height:56px;
+        color:#527DAA;
+        font-size: 14px;
+    }
+    .form-control:focus {
+        -moz-box-shadow:inset 0px 2px 6px 0 rgba(82, 125, 170, 0.5);
+        -webkit-box-shadow:inset 0px 2px 6px 0 rgba(82, 125, 170, 0.5);
+        box-shadow:inset 0px 2px 6px 0 rgba(82, 125, 170, 0.5);
+        border-color: #527DAA;
+        background-color: #fff;
+    }
+    .btn-primary {
+        background-color: #3b86e0;
+        border-color: #3b86e0;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+        background-color: #3b86e0!important;
+        border-color: #3b86e0!important;
+    }
+    .titlebox {
+        position: relative;
+        margin-top: 28px;
+        margin-bottom: 36px;
+        /*left: 50%;*/
+        /*margin-left: -100px;*/
+        /*width:200px;*/
+        /*height:55px;*/
+        /*background: url({@class_public::gimg_url( 'novel/img/title-bg.png' )@}) no-repeat;*/
+        background-size: 100%;
+        text-align: center;
+        color:#fff;
+        font-size: 25px;
+    }
+    .login-topimg {
+        text-align: center;
+        padding-bottom: 60px;
+    }
+    .login-topimg img {
+    }
+
+
+
+
+</style>
+<body style="background: url(static/images/bg.jpg) 0% 0% / 100% 100% no-repeat; height: auto;" >
+<div id="wrapper">
+    <div class="vertical-align-wrap">
+        <!--<div class="row col-md-12">-->
+        <div class="row" style="margin-right: 0px;">
+
+            <div class="col-md-6">
+                <div class="row" style="    margin-top: 5%;   margin-left: 16%;" id="logo_display">
+                    <div class="col-md-6"  >
+                        <div class="vertical-align-middle" style="width:10%;">
+                            <img src="static/picture/login-title.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="    margin-top: 24%;   margin-left: 15%;"  id="logo_display">
+                    <div class="col-md-6"  >
+                        <div class="vertical-align-middle" style="width:10%;">
+                            <img src="static/picture/motto.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 10%;z-index:999">
+                <div class="vertical-align-middle" style="float: right;   position: absolute;    left: 4%;      padding: 6%; " id="logionWidth">
+                    <div class="auth-box "  style="margin:none;">
+                        <div class="content" >
+                            <div class="titlebox">
+                                <img src="static/picture/title-bg.png">
+                            </div>
+                            <form class="form-auth-small" style="padding:0 30px;" id="login_form" onsubmit="return false">
+                                <div class="form-group">
+                                    <img src="static/picture/i_user.png"  style="position: absolute; left: 10px;top: 10px; font-size: 20px;">
+                                    <label for="user" class="control-label sr-only"></label>
+                                    <input type="text" class="form-control" id="user" name="user"  placeholder="用户名" required style="padding-left: 70px;    border-color: #aeaeae;    border-radius: 4px;">
+                                </div>
+                                <div class="form-group">
+                                    <img src="static/picture/pass.png"  style="position: absolute; left: 10px;top: 10px; font-size: 20px;">
+                                    <label for="pass" class="control-label sr-only"></label>
+                                    <input type="password" class="form-control" id="pass" name="pass" value="" placeholder="密码" required style="padding-left: 70px;    border-color: #aeaeae;    border-radius: 4px;" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" name="loginpost" value="1"/>
+                                     <button type="buttom" id="submit" class="btn btn-primary btn-lg btn-block ">确定登录</button>
+                                    <div class="bottom"><span class="helper-text"></span></div>
+                                </div>
+                                <div class="form-group clearfix green tipmsg" style="margin-top: 10%;text-align: center;">
+                                    <a target="_blank" href="/" style="margin-right: 17%;"><img src="static/picture/sm_124x47.png" ></a>
+                                    <a target="_blank" href="/" ><img src="static/picture/aqkx_124x47.png"></a>
+                                </div>
+                                <div class="form-group clearfix green tipmsg" style="margin: 20px;text-align: center;">&nbsp;</div>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div> <!-- END WRAPPER -->
+<style>
+    .toast-top-center {
+        top: 52px;
+    }
+</style>
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",//toast-top-center toast-bottom-center
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    $('#submit').on('click', function () {
+
+        var data = $('#login_form').serialize();
+
+        data += "&is_ajax=1";
+		
+		//模板测试
+		window.location="./shujugaikuan.html"
+		
+		/*
+		登录验证
+        $.post('/auth/login_verify', data, function (msg) {
+
+            if (msg.code == 1) {
+                toastr.success(msg.msg);
+				
+                setTimeout(' window.location="/home/index"', 1000);
+            } else {
+                toastr.warning(msg.msg);
+                return false;
+            }
+        }, 'json')
+		*/
+    })
+
+    var wrapperWidth= $('#wrapper').width();
+
+    if( wrapperWidth < 1300 ){
+        $("div#logo_display").hide();
+
+        $('#logionWidth').css('left','auto')
+        if( wrapperWidth > 500 ){
+            $('#logionWidth').css('right','5%')
+        }
+    }
+
+
+</script>
+</body>
+</html>

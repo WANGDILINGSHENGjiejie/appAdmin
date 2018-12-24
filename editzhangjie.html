@@ -1,0 +1,245 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>笔墨文学-修改章节</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="static/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="static/js/klorofil-common.js"></script>
+    <script type="text/javascript" src="static/js/comm.js"></script>
+    <script type="text/javascript" src="static/js/moment.min.js"></script>
+    <script type="text/javascript" src="static/js/moment_zh-cn.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap-datetimepicker-4.17.min.js"></script>
+    <script type="text/javascript" src="static/js/echarts.min.js"></script>
+    <script src="static/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/css.css">
+    <link rel="stylesheet" href="static/css/media.css">
+    <link rel="stylesheet" href="static/css/bootstrap-datetimepicker-4.17.min.css">
+    <link rel="stylesheet" href="static/css/toastr.min.css">
+</head>
+<body>
+    <div id="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" style="height: 50px;background-color: #3b86e0;">
+    <div class="brand" style="padding:0;background-color: #3b86e0;"><a href="javascript:void(0);"><img
+                    src="static/picture/logo-dark.png" alt="Klorofil Logo"
+                    class="img-responsive logo" style="height:50px;"></a></div>
+    <div class="container-fluid">
+        <div class="navbar-btn">
+            <button type="button" class="btn-toggle-fullwidth"><i class="fa fa-list" aria-hidden="true" style="color:#fff;"></i>
+            </button>
+        </div>
+        <div id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+                                src="static/picture/user.png" class="img-circle" >
+                        <span>八月</span> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./gerenziliao.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>个人资料</span></a>
+                        </li>
+                        <li><a href="/auth/logout" onclick="return confirm('确认退出？')"><i
+                                        class="fa fa-fw fa-power-off" aria-hidden="true"></i> <span>安全退出</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> <!-- END NAVBAR -->   <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar">
+        <div class="sidebar-scroll" style="overflow-y: auto;height: 100%;padding:20px 0;">
+    <nav>
+        <ul class="nav">
+            <li><a href="./shujugaikuan.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="menu-span">数据概况</span></a></li>
+            <li><a href="./xiaoshuoku.html"><i class="fa fa-book" aria-hidden="true"></i><span class="menu-span">小说库</span></a></li>
+            <li><a href="./leixing.html"><i class="fa fa-book" aria-hidden="true"></i><span class="menu-span">类型列表</span></a></li>
+            <li><a href="./yonghu.html"><i class="fa fa-book" aria-hidden="true"></i><span class="menu-span">用户列表</span></a></li>
+        </ul>
+    </nav>
+</div>
+
+    </div>
+    <div class="main">
+        <div class="main-content">
+            <div class="container-fluid">
+                
+
+<div class="container-fluid">
+    <div id="tipdlg"></div>
+    <div class="row">
+
+<!--MODIFY PASSWORD-->
+        <div class="col-md-12">
+            <div class="panel">
+				<div class="panel-heading mynav">
+					<h3 class="panel-title">
+						<i class="fa fa-home" aria-hidden="true"></i>首页 &gt; <h7 class="menu-name" >修改章节</h7>
+					</h3>
+				</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" id="editform">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">章节名称</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="password" name="pass" placeholder="章节名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">排序</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="password1" name="newpass" placeholder="排序">
+                            </div>
+                        </div>
+						<div class="form-group" >
+							<label for="inputPassword3" class="col-sm-3 control-label">状态</label>
+							<div class="col-sm-8">
+								<select id="form-subscribe" class="form-control" name="status">
+									<option value="1"  >待审</option>
+									<option value="2"  >正常</option>
+								</select>
+							</div>
+						</div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">阅读币</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="password2" name="ckpass" placeholder="阅读币">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">内容</label>
+                            <div class="col-sm-8">
+                                富文本
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label"></label>
+                            <div class="col-sm-8">
+                                <button type="button" class="btn btn-success" style="width:100px;">保存</button>
+                                <button type="button" class="btn btn-success" style="width:100px;">上一章</button>
+                                <button type="button" class="btn btn-success" style="width:100px;">下一章</button>
+                                <button type="button" class="btn btn-success" style="width:100px;">章节列表</button>
+                                <span class="green tipmsg">&nbsp;</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+<!--MODIFY PASSWORD END-->
+    </div>
+</div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <footer></footer>
+</div>
+
+<style>
+    .toast-top-center {
+        top: 52px;
+    }
+</style>
+
+<script>
+    api.CopyText_modal();
+    var imgurl = 'static01.cjdxs.com';
+
+    var menuName = $("h7.menu-name").text();
+
+    $("span.menu-span").each(function () {
+
+        var menuTitle = $(this).text();
+
+        if (menuTitle == menuName) {
+
+            $(this).parent().addClass('active');
+
+        }
+
+    });
+
+
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",//toast-top-center toast-bottom-center
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    function adm_ajax_ckstat(stat) {
+        if (stat == "ok") return true;
+
+        if (stat == "nologin") {
+            window.location.reload();
+        }
+        return false;
+    }
+
+    var pdata = { action:'notice_msg' };
+
+    sendData("/notice/notice_msg", pdata, function(data){
+        var data = data.data;
+        _Notice    = data.data.unrdnum;
+        _unReadTop = data.data.unrdmsg;
+        noticemsg.showmsgnumEx(_Notice);
+        noticemsg.autoreaddlg();
+
+    });
+
+
+</script>
+<script src="static/js/paginate.js"></script>
+<script>
+
+    $("#submit").on('click',function(){
+
+        var url = "/user/modify_pwd_save";
+
+        var data = $("#editform").serialize()
+
+        data += "&is_ajax=1";
+
+        $.post(url,data,function(msg){
+
+            if(msg.data.type == '404'){
+                toastr.warning(msg.data.msg);
+            }
+            if( msg.data.type == '200' ) {
+                toastr.success(msg.data.msg);
+                setTimeout('window.location="/auth/login"',1000);
+            }
+        },'json')
+    })
+
+</script>
+</body>
+</html>

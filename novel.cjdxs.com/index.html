@@ -1,0 +1,333 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>首页 - 八月</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="./static/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="./static/js/klorofil-common.js"></script>
+    <script type="text/javascript" src="./static/js/comm.js"></script>
+    <script type="text/javascript" src="./static/js/moment.min.js"></script>
+    <script type="text/javascript" src="./static/js/moment_zh-cn.js"></script>
+    <script type="text/javascript" src="./static/js/bootstrap-datetimepicker-4.17.min.js"></script>
+    <script type="text/javascript" src="./static/js/echarts.min.js"></script>
+    <script src="./static/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./static/css/css.css">
+    <link rel="stylesheet" href="./static/css/media.css">
+    <link rel="stylesheet" href="./static/css/bootstrap-datetimepicker-4.17.min.css">
+    <link rel="stylesheet" href="./static/css/toastr.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" style="height: 50px;background-color: #3b86e0;">
+            <div class="brand" style="padding:0;background-color: #3b86e0;"><a href="javascript:void(0);"><img src="./static/picture/logo-dark.png"
+                        alt="Klorofil Logo" class="img-responsive logo" style="height:50px;"></a></div>
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-fullwidth"><i class="fa fa-list" aria-hidden="true" style="color:#fff;"></i>
+                    </button>
+                </div>
+                <div id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li class="dropdown">
+                            <a href="/notice/index" class="dropdown-toggle icon-menu"> <i class="fa fa-bell-o"
+                                    aria-hidden="true"></i>
+                                <span class="badge bg-danger notice_msgnum"></span>
+                            </a>
+                        </li> -->
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="./static/picture/user.png"
+                                    class="img-circle">
+                                <span>八月</span> <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/user/modify_pwd"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>个人资料</span></a>
+                                </li>
+                                <!-- <li><a href="/setting/index"><i class="fa fa-address-card-o" aria-hidden="true"></i><span>公众号设置/接入</span></a>
+                                </li>
+                                <li><a href="https://static01.cjdxs.com/backend/novel/docx/cjdxs_readme.docx"><i class="fa fa-arrow-down"
+                                            aria-hidden="true"></i><span>下载帮助文档</span></a>
+                                </li> -->
+                                <li><a href="/auth/logout" onclick="return confirm('确认退出？')"><i class="fa fa-fw fa-power-off"
+                                            aria-hidden="true"></i> <span>安全退出</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> <!-- END NAVBAR -->
+        <!-- LEFT SIDEBAR -->
+        <div id="sidebar-nav" class="sidebar">
+            <div class="sidebar-scroll" style="overflow-y: auto;height: 100%;padding:20px 0;">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="./personalInformation.html" id="noticemenu"><i class="far fa-smile"></i><span
+                                    class="menu-span">个人信息</span></a></li>
+                        <li><a href="./DataGaikuan.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="menu-span">数据概况</span></a></li>
+                        
+                        <li><a href="/order/summary"><i class="far fa-user" aria-hidden="true"></i><span class="menu-span">用户管理</span></a>
+                        </li>
+                        <li><a href="/book/index?sex=1"><i class="fa fa-book" aria-hidden="true"></i><span class="menu-span">小说管理</span></a>
+                        </li>
+                        
+                        <!-- <li><a href="/user/summary"><i class="fa fa-pie-chart" aria-hidden="true"></i><span class="menu-span">用户汇总</span></a></li> -->
+                        <!-- <li><a href="/book/summary"><i class="fa fa-bars" aria-hidden="true"></i><span class="menu-span">小说充值汇总</span></a></li> -->
+                        <!-- <li><a href="/order/index"><i class="fa fa-list-alt" aria-hidden="true"></i><span class="menu-span">订单明细</span></a></li> -->
+                        <!-- <li><a href="/fans/index"><i class="fa fa-id-card-o" aria-hidden="true"></i><span class="menu-span">粉丝明细</span></a></li> -->
+                        
+                        <!-- <li><a href="/channel/index"><i class="fa fa-chain-broken" aria-hidden="true"></i><span class="menu-span">推广列表</span></a></li> -->
+                        <!-- <li><a href="/channel/Internal"><i class="fa fa-link" aria-hidden="true"></i><span class="menu-span">内推列表</span></a></li> -->
+                        <!-- <li><a href="/channel/activity"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span
+                                    class="menu-span">活动列表</span></a></li> -->
+                        <!-- <li><a href="/keyreplys/index"><i class="fa fa-comments-o" aria-hidden="true"></i><span class="menu-span">关键词回复</span></a></li> -->
+                        <!-- <li><a href="/channel/linkRecycling"><i class="fa fa-recycle" aria-hidden="true"></i><span
+                                    class="menu-span">链接回收</span></a></li> -->
+                        <!-- <li><a href="/pushmsg/index"><i class="fa fa-reply-all" aria-hidden="true"></i><span class="menu-span">智能推送</span></a></li> -->
+                        <!-- <li><a href="/msg/template"><i class="fa fa-envelope-open" aria-hidden="true"></i><span class="menu-span">模版消息</span></a></li> -->
+                        <!-- <li><a href="/msg/customMsg"><i class="fa fa-commenting-o" aria-hidden="true"></i><span class="menu-span">客服消息</span></a></li> -->
+                        <!-- <li><a href="/income/index"><i class="fa fa-jpy" aria-hidden="true"></i><span class="menu-span">推广收入</span></a></li> -->
+                        <!-- <li><a href="/withdrawal/index"><i class="fa fa-list-alt" aria-hidden="true"></i><span class="menu-span">提现明细</span></a></li> -->
+                        <!-- <li><a href="/setting/index"><i class="fa fa-cog" aria-hidden="true"></i><span class="menu-span">公众号设置</span></a></li> -->
+                        <!-- <li><a href="/setting/more"><i class="fa fa-cogs" aria-hidden="true"></i><span class="menu-span">其它设置</span></a></li> -->
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <div class="main">
+            <div class="main-content">
+                <div class="container-fluid">
+
+
+                    <div class="container-fluid">
+                        <div id="tipdlg"></div>
+                        <div class="row">
+                            <!--BASIC INFORMATION-->
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <div class="panel-heading panel-header-bottom">
+                                        <h3 class="panel-title">基本信息</h3>
+                                    </div>
+                                    <div class="panel-body form-horizontal">
+                                        <div class="form-group"><label class="col-sm-3  control-label" style="padding-top:0;">渠道ID</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-3  control-label" style="padding-top:0;">用户名</label>
+                                            <div class="col-sm-8">农家书库</div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-3  control-label" style="padding-top:0;">昵称</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-3  control-label" style="padding-top:0;">手机</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-3  control-label" style="padding-top:0;">邮箱地址</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group"><label class="col-sm-3  control-label" style="padding-top:0;">佣金比例</label>
+                                            <div class="col-sm-8">90%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--BASIC INFORMATION END-->
+
+                            <!--MODIFY PASSWORD-->
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <div class="panel-heading panel-header-bottom">
+                                        <h3 class="panel-title">修改密码</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form class="form-horizontal" id="editform">
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-3 control-label">旧密码</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="password" name="pass"
+                                                        placeholder="旧密码">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-3 control-label">新密码</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="password1" name="newpass"
+                                                        placeholder="新密码">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-3 control-label">确认新密码</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="password2" name="ckpass"
+                                                        placeholder="确认新密码">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-3 control-label"></label>
+                                                <div class="col-sm-8">
+                                                    <button type="button" id="submit" class="btn btn-success" style="width:100px;">确定修改</button>
+                                                    <span class="green tipmsg">&nbsp;</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--MODIFY PASSWORD END-->
+                        </div>
+                        <!--BILLING MESSAGE-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel">
+                                    <div class="panel-heading panel-header-bottom">
+                                        <h3 class="panel-title">收款信息</h3>
+                                    </div>
+                                    <div class="panel-body form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-3  control-label" style="padding-top:0;">收款类型</label>
+                                            <div class="col-sm-8">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3  control-label" style="padding-top:0;">持卡人姓名</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3  control-label" style="padding-top:0;">银行卡号</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3  control-label" style="padding-top:0;">开户行</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3  control-label" style="padding-top:0;">帐号类型</label>
+                                            <div class="col-sm-8">--</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--BILLING MESSAGE END-->
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+        <footer></footer>
+    </div>
+
+    <style>
+        .toast-top-center {
+            top: 52px;
+        }
+    </style>
+
+    <script>
+        api.CopyText_modal();
+        var imgurl = 'static01.cjdxs.com';
+
+        var menuName = $("h7.menu-name").text();
+
+        $("span.menu-span").each(function () {
+
+            var menuTitle = $(this).text();
+
+            if (menuTitle == menuName) {
+
+                $(this).parent().addClass('active');
+
+                if (menuName == "公告列表") {
+
+                    $(this).css('color', 'rgb(232, 86, 86)');
+
+                }
+            }
+
+        });
+
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-center", //toast-top-center toast-bottom-center
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        function adm_ajax_ckstat(stat) {
+            if (stat == "ok") return true;
+
+            if (stat == "nologin") {
+                window.location.reload();
+            }
+            return false;
+        }
+
+        var pdata = {
+            action: 'notice_msg'
+        };
+
+        sendData("/notice/notice_msg", pdata, function (data) {
+            var data = data.data;
+            _Notice = data.data.unrdnum;
+            _unReadTop = data.data.unrdmsg;
+            noticemsg.showmsgnumEx(_Notice);
+            noticemsg.autoreaddlg();
+
+        });
+    </script>
+    <script src="static/js/paginate.js"></script>
+    <script>
+        $("#submit").on('click', function () {
+
+            var url = "/user/modify_pwd_save";
+
+            var data = $("#editform").serialize()
+
+            data += "&is_ajax=1";
+
+            $.post(url, data, function (msg) {
+
+                if (msg.data.type == '404') {
+                    toastr.warning(msg.data.msg);
+                }
+                if (msg.data.type == '200') {
+                    toastr.success(msg.data.msg);
+                    setTimeout('window.location="/auth/login"', 1000);
+                }
+            }, 'json')
+        })
+    </script>
+</body>
+
+</html>
