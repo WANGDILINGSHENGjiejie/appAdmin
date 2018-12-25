@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>笔墨文学 - 用户列表</title>
+    <title>笔墨文学 - 小说列表</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
     <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
@@ -94,7 +94,7 @@
                         <div class="panel-heading mynav">
                             <h3 class="panel-title">
                                 <i class="fa fa-home" aria-hidden="true"></i>首页 &gt;
-                                <h7 class="menu-name">用户列表</h7>
+                                <h7 class="menu-name">小说列表</h7>
                             </h3>
                         </div>
                         <!--TITLE END-->
@@ -102,27 +102,28 @@
                         <!--SEARCH-->
                         <div class="panel-body">
                             <form class="form-inline" action="/fans/index" method="get" style="padding-bottom: 20px;">
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="用户ID" type="text" id="form-key" name="key"
-                                        value="">
-                                </div>
-                                <div class="form-group">
-                                        <select id="form-subscribe" class="form-control" name="status">
-                                            <option value="1">选择时间类型</option>
-                                            <option value="2">登录时间</option>
-                                            <option value="3">创建时间</option>
-                                        </select>
+                                <div class="btn-group form-group">
+                                        <button type="button" class="btn btn-success dropdown-toggle" onclick="layerUItest()" style="background-color:#1890ff;border: #1890ff;"> 添加小说 </button>
                                     </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control datetimepicker" id="form-start_date" value=""
-                                        name="stime" placeholder="开始日期">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control datetimepicker" id="form-end_date" value=""
-                                        name="etime" placeholder="结束日期">
-                                    <input type="hidden" name="readcoins" value="asc">
-                                    <input type="hidden" name="cid" value="">
-                                </div>
+                                        <select id="form-subscribe" class="form-control" name="status">
+                                            <option value="1">选择状态</option>
+                                            <option value="2">上架</option>
+                                            <option value="3">下架</option>
+                                            <option value="4">待上架</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                            <select id="form-subscribe" class="form-control" name="status">
+                                                <option value="1">选择频道</option>
+                                                <option value="2">男频</option>
+                                                <option value="3">女频</option>
+                                            </select>
+                                        </div>
+                                            <div class="form-group">
+                                                    <input class="form-control" placeholder="ID,书名，作者" type="text" id="form-key" name="key"
+                                                        value="">
+                                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">搜索</button>
                                 </div>
@@ -135,74 +136,94 @@
                                 <thead>
                                     <tr>
                                         <th width="5%">ID</th>
-                                        <th width="10%">昵称</th>
-                                        <th width="5%">性别</th>
-                                        <th width="10%" class="pc">书币</th>
-                                        <th width="10%" class="pc">现金</th>
-                                        <th width="10%">手机品牌 </th>
-                                        <th width="15%">来源</th>
-                                        <th width="15%">登录时间</th>
-                                        <th width="15%">创建时间</th>
-                                        <th width="5%">操作</th>
+                                        <th width="10%">名称</th>
+                                        <th width="10%">作者 </th>
+                                        <th width="6%">进度</th>
+                                        <th width="6%" >状态</th>
+                                        <th width="6%" >性别频度</th>
+                                        <th width="6%">分类</th>
+                                        <th width="6%">费用</th>
+                                        <th width="10%">封面</th>
+                                        <th width="35%">操作</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>125</td>
                                         <td>
-                                           <span>谁是谁的谁</span>
+                                           <span>天眼神医</span>
                                         </td>
-                                        <td><span>女</span></td>
-                                        <td>85123</td>
-                                        <td> 85 </td>
-                                        <td><span>iPhone7Plus</span></td>
-                                        <td><span>今日头条投放广告</span></td>
-                                        <td>2018-12-23 10:30:18</td>
-                                        <td>2018-12-23 10:30:18</td>
-                                        <td><button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改</button></td>
+                                        <td><span>铜都小狗</span></td>
+                                        <td><span>已完结</span></td>
+                                        <td> <span>上架</span> </td>
+                                        <td><span>男频</span></td>
+                                        <td><span>都市</span></td>
+                                        <td><span>收费</span></td>
+                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
+                                        <td>
+                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
+                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
+                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
+                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                            <td>125</td>
-                                            <td>
-                                               <span>谁是谁的谁</span>
-                                            </td>
-                                            <td><span>女</span></td>
-                                            <td>85123</td>
-                                            <td> 85 </td>
-                                            <td><span>iPhone7Plus</span></td>
-                                            <td><span>今日头条投放广告</span></td>
-                                            <td>2018-12-23 10:30:18</td>
-                                            <td>2018-12-23 10:30:18</td>
-                                            <td><button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改</button></td>
-                                        </tr>
-                                        <tr>
-                                                <td>125</td>
-                                                <td>
-                                                   <span>谁是谁的谁</span>
-                                                </td>
-                                                <td><span>女</span></td>
-                                                <td>85123</td>
-                                                <td> 85 </td>
-                                                <td><span>iPhone7Plus</span></td>
-                                                <td><span>今日头条投放广告</span></td>
-                                                <td>2018-12-23 10:30:18</td>
-                                                <td>2018-12-23 10:30:18</td>
-                                                <td><button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改</button></td>
-                                            </tr>
-                                            <tr>
-                                                    <td>125</td>
-                                                    <td>
-                                                       <span>谁是谁的谁</span>
-                                                    </td>
-                                                    <td><span>女</span></td>
-                                                    <td>85123</td>
-                                                    <td> 85 </td>
-                                                    <td><span>iPhone7Plus</span></td>
-                                                    <td><span>今日头条投放广告</span></td>
-                                                    <td>2018-12-23 10:30:18</td>
-                                                    <td>2018-12-23 10:30:18</td>
-                                                    <td><button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改</button></td>
-                                                </tr>
+                                        <td>125</td>
+                                        <td>
+                                           <span>天眼神医</span>
+                                        </td>
+                                        <td><span>铜都小狗</span></td>
+                                        <td><span>已完结</span></td>
+                                        <td> <span>上架</span> </td>
+                                        <td><span>男频</span></td>
+                                        <td><span>都市</span></td>
+                                        <td><span>收费</span></td>
+                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
+                                        <td>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>125</td>
+                                        <td>
+                                           <span>天眼神医</span>
+                                        </td>
+                                        <td><span>铜都小狗</span></td>
+                                        <td><span>已完结</span></td>
+                                        <td> <span>上架</span> </td>
+                                        <td><span>男频</span></td>
+                                        <td><span>都市</span></td>
+                                        <td><span>收费</span></td>
+                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
+                                        <td>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>125</td>
+                                        <td>
+                                           <span>天眼神医</span>
+                                        </td>
+                                        <td><span>铜都小狗</span></td>
+                                        <td><span>已完结</span></td>
+                                        <td> <span>上架</span> </td>
+                                        <td><span>男频</span></td>
+                                        <td><span>都市</span></td>
+                                        <td><span>收费</span></td>
+                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
+                                        <td>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
+                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>    
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <!--TABLE END-->
@@ -311,6 +332,28 @@
             format: 'YYYY-MM-DD',
             locale: moment.locale('zh-CN'),
         });
+    </script>
+    <script>
+    
+    function layerUItest() {
+                var $=layui.$;
+                layer.open({
+                    type: 1,
+                    title: ["添加文案", 'background-color:#00B2EE;color:#fff'],
+                    area: ['1000px', '600px'],
+                    scrollbar: false,
+                    closeBtn:2,
+                    content: $("#waga"),
+                    end: function() {
+//                      $("#waga").css("display:none")
+                     $('#input_bookname').text('')
+                     $('#input_title').text('')
+                     $('#input_link').text('')
+                     $('#input_of').text('')
+                     $('#input_remark').text('')
+                    }
+                });
+            }
     </script>
 
 </body>
