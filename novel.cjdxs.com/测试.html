@@ -1,64 +1,492 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>4款css3复选框开关按钮切换特效</title>
     
-    .nav{
-	width:600px;
-	padding-left:20px;
-	background-color:#000;}
-.nav>ul>li{   /*代表只选取子元素，而不是后代元素*/
-	float:left;
-	}
-.nav ul ul{
-	position:absolute;
-	display:none;
-	z-index:10;
-	}
-.nav>ul>li:hover ul{
-	display:block;
-	}
-.nav a{
-	display:block;
-	padding:10px 20px;
-	background-color:#000;
-	color:#FFF;
-	text-decoration:none;
-	font-weight:bold;
-	white-space:nowrap;/*强制文字不换行*/
-	transition:background-color .2s linear;
-	}
-.nav a:hover,.nav a.current,.nav>ul>li:hover>a{
-	background-color:#E92E74;}
+        <link href="/static/css/demo.css" rel="stylesheet" media="all">
     
-    </style>
-</head>
-<body>
-    <div class="nav">
-        <ul class="clearfix">
-            <li><a href="#" class="current">首页</a></li>
-            <li><a href="#">创意素材</a>
-                <ul>
-                    <li><a href="#">psd原稿</a></li>
-                <li><a href="#">javascript特效</a></li>
-                <li><a href="#">矢量素材</a></li>
-                </ul>
-            </li>
-            <li><a href="#">作品</a>
-                <ul>
-                    <li><a href="#">psd原稿</a></li>
-                <li><a href="#">javascript特效</a></li>
-                <li><a href="#">矢量素材</a></li>
-                </ul>
-            
-            </li>
-            <li><a href="#">视频</a></li>
-            <li><a href="#">论坛</a></li>     
-        </ul>
+
+    
+        <script src="https://hm.baidu.com/hm.js?382f81c966395258f239157654081890"></script><script type="text/javascript" src="/static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.qrcode.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                function fixHeight() {
+                    var headerHeight = $("#switcher").height();
+                    $("#iframe").attr("height", $(window).height()-54+ "px");
+                }
+                $(window).resize(function () {
+                    fixHeight();
+                }).resize();
+    
+                $('.icon-monitor').addClass('active');
+    
+                $(".icon-mobile-3").click(function () {
+                    $("#by").css("overflow-y", "auto");
+                    $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+                    $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                    $(this).addClass('active');
+                    return false;
+                });
+    
+                $(".icon-mobile-2").click(function () {
+                    $("#by").css("overflow-y", "auto");
+                    $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+                    $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                    $(this).addClass('active');
+                    return false;
+                });
+    
+                $(".icon-mobile-1").click(function () {
+                    $("#by").css("overflow-y", "auto");
+                    $('#iframe-wrap').removeClass().addClass('mobile-width');
+                    $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                    $(this).addClass('active');
+                    return false;
+                });
+    
+                $(".icon-tablet").click(function () {
+                    $("#by").css("overflow-y", "auto");
+                    $('#iframe-wrap').removeClass().addClass('tablet-width');
+                    $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                    $(this).addClass('active');
+                    return false;
+                });
+    
+                $(".icon-monitor").click(function () {
+                    $("#by").css("overflow-y", "hidden");
+                    $('#iframe-wrap').removeClass().addClass('full-width');
+                    $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                    $(this).addClass('active');
+                    return false;
+                });
+            });
+        </script>
+    
+        <script type="text/javascript">
+        function Responsive($a) {
+            if ($a == true) $("#Device").css("opacity", "100");
+            if ($a == false) $("#Device").css("opacity", "0");
+            $('#iframe-wrap').removeClass().addClass('full-width');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        };
+        </script>
+        
+    </head>
+    <body id="by">
+    
+    <div id="switcher">
+        <div class="center">
+            <ul>
+                <div id="Device">
+                    <li class="device-monitor"><a href="javascript:"><div class="icon-monitor active"></div></a></li>
+                    <li class="device-mobile"><a href="javascript:"><div class="icon-tablet"></div></a></li>
+                    <li class="device-mobile"><a href="javascript:"><div class="icon-mobile-1"></div></a></li>
+                    <li class="device-mobile-2"><a href="javascript:"><div class="icon-mobile-2"></div></a></li>
+                    <li class="device-mobile-3"><a href="javascript:"><div class="icon-mobile-3"></div></a></li>
+                </div>
+               <li class="remove_frame"><a href="http://www.17sucai.com/preview/869565/2018-09-14/an/demo.html" title="移除框架"></a></li>
+            </ul>
+        </div>
     </div>
-</body>
-</html>
+    
+    <div id="iframe-wrap">
+        <iframe id="iframe" src="http://www.17sucai.com/preview/869565/2018-09-14/an/demo.html" frameborder="0" width="100%" height="621px"></iframe>
+    </div>
+  
+    
+    
+    
+    </body></html> -->
+
+
+    <html><head>
+            <meta charset="utf-8">
+            <title>自定义复选框/开关切换</title>
+            
+            <style>
+            body{background:#000;margin:0;padding:0;}
+            
+            
+            .wrapper{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                width: 400px;
+                margin: 50vh auto 0;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                -webkit-transform: translateY(-50%);
+                        transform: translateY(-50%);
+            }
+            
+            .switch_box{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                max-width: 200px;
+                min-width: 200px;
+                height: 200px;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+            }
+            
+            /* Switch 1 Specific Styles Start */
+            
+            .box_1{
+                background: #eee;
+            }
+            
+            input[type="checkbox"].switch_1{
+                font-size: 30px;
+                -webkit-appearance: none;
+                   -moz-appearance: none;
+                        appearance: none;
+                width: 3.5em;
+                height: 1.5em;
+                background: #ddd;
+                border-radius: 3em;
+                position: relative;
+                cursor: pointer;
+                outline: none;
+                -webkit-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
+              }
+              
+              input[type="checkbox"].switch_1:checked{
+                background: #0ebeff;
+              }
+              
+              input[type="checkbox"].switch_1:after{
+                position: absolute;
+                content: "";
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 50%;
+                background: #fff;
+                -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+                        box-shadow: 0 0 .25em rgba(0,0,0,.3);
+                -webkit-transform: scale(.7);
+                        transform: scale(.7);
+                left: 0;
+                -webkit-transition: all .2s ease-in-out;
+                transition: all .2s ease-in-out;
+              }
+              
+              input[type="checkbox"].switch_1:checked:after{
+                left: calc(100% - 1.5em);
+              }
+        
+            
+            .box_2{
+                background: #666;
+            }
+            
+            input[type="checkbox"].switch_2{
+              -webkit-appearance: none;
+                 -moz-appearance: none;
+                      appearance: none;
+              width: 100px;
+              height: 8px;
+              background: #444;
+              border-radius: 5px;
+              position: relative;
+              outline: 0;
+              cursor: pointer;
+            }
+            
+            input[type="checkbox"].switch_2:before,
+            input[type="checkbox"].switch_2:after{
+              position: absolute;
+              content: "";
+              -webkit-transition: all .25s;
+              transition: all .25s;
+            }
+            
+            input[type="checkbox"].switch_2:before{
+              width: 40px;
+              height: 40px;
+              background: #ccc;
+              border: 5px solid #666;
+              border-radius: 50%;
+              top: 50%;
+              left: 0;
+              -webkit-transform: translateY(-50%);
+                      transform: translateY(-50%);
+            }
+            
+            input[type="checkbox"].switch_2:after{
+              width: 30px;
+              height: 30px;
+              background: #666;
+              border-radius: 50%;
+              top: 50%;
+              left: 10px;
+              -webkit-transform: scale(1) translateY(-50%);
+                      transform: scale(1) translateY(-50%);
+              -webkit-transform-origin: 50% 50%;
+                      transform-origin: 50% 50%;
+            }
+            
+            input[type="checkbox"].switch_2:checked:before{
+              left: calc(100% - 35px);
+            }
+            
+            input[type="checkbox"].switch_2:checked:after{
+              left: 75px;
+              -webkit-transform: scale(0);
+                      transform: scale(0);
+            }
+            
+            /* Switch 2 Specific Style End */
+            
+                
+            /* Switch 3 Specific Style Start */
+            
+            .box_3{
+                background: #19232b;
+            }
+            
+            .toggle_switch{
+              width: 100px;
+              height: 45px;
+              position: relative;
+            }
+            
+            input[type="checkbox"].switch_3{
+              -webkit-appearance: none;
+                 -moz-appearance: none;
+                      appearance: none;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              cursor: pointer;
+              outline: 0;
+              z-index: 1;
+            }
+            
+            svg.checkbox .outer-ring{
+              stroke-dasharray: 375;
+              stroke-dashoffset: 375;
+              -webkit-animation: resetRing .35s ease-in-out forwards;
+                      animation: resetRing .35s ease-in-out forwards;
+            }
+            
+            input[type="checkbox"].switch_3:checked + svg.checkbox .outer-ring{
+              -webkit-animation: animateRing .35s ease-in-out forwards;
+                      animation: animateRing .35s ease-in-out forwards;
+            }
+            
+            input[type="checkbox"].switch_3:checked + svg.checkbox .is_checked{
+              opacity: 1;
+              -webkit-transform: translateX(0) rotate(0deg);
+                      transform: translateX(0) rotate(0deg);
+            }
+            
+            input[type="checkbox"].switch_3:checked + svg.checkbox .is_unchecked{
+              opacity: 0;
+              -webkit-transform: translateX(-200%) rotate(180deg);
+                      transform: translateX(-200%) rotate(180deg);
+            }
+            
+            
+            svg.checkbox{
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+            
+            svg.checkbox .is_checked{
+              opacity: 0;
+              fill: yellow;
+              -webkit-transform-origin: 50% 50%;
+                      transform-origin: 50% 50%;
+              -webkit-transform: translateX(200%) rotate(45deg);
+                      transform: translateX(200%) rotate(45deg);
+              -webkit-transition: all .35s;
+              transition: all .35s;
+            }
+            
+            svg.checkbox .is_unchecked{
+              opacity: 1;
+              fill: #fff;
+              -webkit-transform-origin: 50% 50%;
+                      transform-origin: 50% 50%;
+              -webkit-transform: translateX(0) rotate(0deg);
+                      transform: translateX(0) rotate(0deg);
+              -webkit-transition: all .35s;
+              transition: all .35s;
+            }
+            
+            @-webkit-keyframes animateRing{
+              to{
+                stroke-dashoffset: 0;
+                stroke: #b0aa28;
+              }
+            }
+            
+            @keyframes animateRing{
+              to{
+                stroke-dashoffset: 0;
+                stroke: #b0aa28;
+              }
+            }
+            
+            @-webkit-keyframes resetRing{
+              to{
+                stroke-dashoffset: 0;
+                stroke: #233043;
+              }
+            }
+            
+            @keyframes resetRing{
+              to{
+                stroke-dashoffset: 0;
+                stroke: #233043;
+              }
+            }
+            
+            /* Switch 3 Specific Style End */
+            
+            
+            /* Switch 4 Specific Style Start */
+            
+            .box_4{
+                background: #eee;
+            }
+            
+            .input_wrapper{
+              width: 80px;
+              height: 40px;
+              position: relative;
+              cursor: pointer;
+            }
+            
+            .input_wrapper input[type="checkbox"]{
+              width: 80px;
+              height: 40px;
+              cursor: pointer;
+              -webkit-appearance: none;
+                 -moz-appearance: none;
+                      appearance: none;
+              background: #315e7f;
+              border-radius: 2px;
+              position: relative;
+              outline: 0;
+              -webkit-transition: all .2s;
+              transition: all .2s;
+            }
+            
+            .input_wrapper input[type="checkbox"]:after{
+              position: absolute;
+              content: "";
+              top: 3px;
+              left: 3px;
+              width: 34px;
+              height: 34px;
+              background: #dfeaec;
+              z-index: 2;
+              border-radius: 2px;
+              -webkit-transition: all .35s;
+              transition: all .35s;
+            }
+            
+            .input_wrapper svg{
+              position: absolute;
+              top: 50%;
+              -webkit-transform-origin: 50% 50%;
+                      transform-origin: 50% 50%;
+              fill: #fff;
+              -webkit-transition: all .35s;
+              transition: all .35s;
+              z-index: 1;
+            }
+            
+            .input_wrapper .is_checked{
+              width: 18px;
+              left: 18%;
+              -webkit-transform: translateX(190%) translateY(-30%) scale(0);
+                      transform: translateX(190%) translateY(-30%) scale(0);
+            }
+            
+            .input_wrapper .is_unchecked{
+              width: 15px;
+              right: 10%;
+              -webkit-transform: translateX(0) translateY(-30%) scale(1);
+                      transform: translateX(0) translateY(-30%) scale(1);
+            }
+            
+            /* Checked State */
+            .input_wrapper input[type="checkbox"]:checked{
+              background: #23da87;
+            }
+            
+            .input_wrapper input[type="checkbox"]:checked:after{
+              left: calc(100% - 37px);
+            }
+            
+            .input_wrapper input[type="checkbox"]:checked + .is_checked{
+              -webkit-transform: translateX(0) translateY(-30%) scale(1);
+                      transform: translateX(0) translateY(-30%) scale(1);
+            }
+            
+            .input_wrapper input[type="checkbox"]:checked ~ .is_unchecked{
+              -webkit-transform: translateX(-190%) translateY(-30%) scale(0);
+                      transform: translateX(-190%) translateY(-30%) scale(0);
+            }
+            
+            /* Switch 4 Specific Style End */</style>
+            </head>
+            <body>
+            
+            <div class="wrapper">
+                    <div class="switch_box box_1">
+                        <input type="checkbox" class="switch_1">
+                    </div>
+                    <div class="switch_box box_2">
+                        <input type="checkbox" class="switch_2">
+                    </div>
+                    <div class="switch_box box_3">
+                        <div class="toggle_switch">
+                            <input type="checkbox" class="switch_3">
+                            <svg class="checkbox" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" viewBox="0 0 168 80">
+                               <path class="outer-ring" d="M41.534 9h88.932c17.51 0 31.724 13.658 31.724 30.482 0 16.823-14.215 30.48-31.724 30.48H41.534c-17.51 0-31.724-13.657-31.724-30.48C9.81 22.658 24.025 9 41.534 9z" fill="none" stroke="#233043" stroke-width="3" stroke-linecap="square" stroke-miterlimit="3"></path>
+                               <path class="is_checked" d="M17 39.482c0-12.694 10.306-23 23-23s23 10.306 23 23-10.306 23-23 23-23-10.306-23-23z"></path>
+                                <path class="is_unchecked" d="M132.77 22.348c7.705 10.695 5.286 25.617-5.417 33.327-2.567 1.85-5.38 3.116-8.288 3.812 7.977 5.03 18.54 5.024 26.668-.83 10.695-7.706 13.122-22.634 5.418-33.33-5.855-8.127-15.88-11.474-25.04-9.23 2.538 1.582 4.806 3.676 6.66 6.25z"></path>
+                            </svg>
+                          </div>
+                    </div>
+                    <div class="switch_box box_4">
+                        <div class="input_wrapper">
+                            <input type="checkbox" class="switch_4">
+                            <svg class="is_checked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.67 426.67">
+                          <path d="M153.504 366.84c-8.657 0-17.323-3.303-23.927-9.912L9.914 237.265c-13.218-13.218-13.218-34.645 0-47.863 13.218-13.218 34.645-13.218 47.863 0l95.727 95.727 215.39-215.387c13.218-13.214 34.65-13.218 47.86 0 13.22 13.218 13.22 34.65 0 47.863L177.435 356.928c-6.61 6.605-15.27 9.91-23.932 9.91z"></path>
+                        </svg>
+                            <svg class="is_unchecked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982">
+                          <path d="M131.804 106.49l75.936-75.935c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.49 81.18 30.555 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.99 6.99-6.99 18.323 0 25.312L81.18 106.49 5.24 182.427c-6.99 6.99-6.99 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0L106.49 131.8l75.938 75.937c6.99 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.323 0-25.313l-75.936-75.936z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                          </div>
+                    </div>
+                </div>
+            
+            
+            
+            </body></html>
