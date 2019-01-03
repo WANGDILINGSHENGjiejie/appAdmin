@@ -1,0 +1,184 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>纯css编写开关按钮（一）</title>
+    <style type="text/css">
+        .chooseBtn {
+            display: none;
+        }
+
+        .choose-label {
+            box-shadow: #ccc 0px 0px 0px 1px;
+            width: 40px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            position: relative;
+            background-color: #bdbdbd;
+            overflow: hidden;
+        }
+
+        .choose-label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            background-color: #fff;
+            z-index: 20;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .chooseBtn:checked+label.choose-label:before {
+            left: 20px;
+        }
+
+        .chooseBtn:checked+label.choose-label {
+            background-color: #51ccee;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="sex" id="male" class="chooseBtn" /> <label for="male" class="choose-label"></label>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>点击这个按钮，获得基于时间的问候。</p>
+
+    <button onclick="myFunction()">点击这里</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var x = "";
+            var time = new Dada().getHours();
+            if (time < 11) {
+                x = "zao"
+            } else if (time < 22) {
+                x = "haoyi"
+            } else {
+                x = "wans"
+            }
+            document.getElementById("demo").innerHTML = x;
+        }
+        // function myFunction()
+        // {
+        // var x="";
+        // var time=new Date().getHours();
+        // if (time<11)
+        //   {
+        //   x="Good morning";
+        //   }
+        // else if (time<20)
+        //   {
+        //   x="Good day";
+        //   }
+        // else
+        //   {
+        //   x="Good evening";
+        //   }
+        // document.getElementById("demo").innerHTML=x;
+        // }
+    </script>
+
+</body>
+
+</html>
+<script>
+    // var a = [];
+    // for (let i = 0; i < 10; i++) {
+    //   a[i] = function () {
+    //     console.log(i);
+    //   };
+    // }
+    // a[5](); 
+
+    // var a = [];
+    // for (var i = 0; i < 10; i++) {
+    //   a[i] = function () {
+    //     console.log(i);
+    //   };
+    // }
+    // a[6](); // 10
+
+    // for (let i = 0; i < 3; i++) {
+    //   let i = 'abc';
+    //   console.log(i);
+    // }
+
+    // var tmp = new Date();
+
+    // function f() {
+    //   console.log(tmp);
+    //   if (false) {
+    //     var tmp = 'hello world';
+    //   }
+    // }
+
+    // f(); // undefined
+
+    function f1() {
+        let n = 5;
+        if (true) {
+            let n = 10;
+        }
+        console.log(n); // 5
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        var lieCount = 0;
+        var tableData = new Array();
+        var zd = ture;
+        var data_lie_index = null;
+        var precent_lie_index = null;
+        var total_precent_lie_index = null;
+        //给表头委托点击事件
+        $("#tb").find(".tr_data").each(function (index) {
+            lieCount++;
+            $(this).click(function () {
+                //获取表格所有行的值
+                $("#tb").find(".tr_data").each(function (tr_data_index) {
+                    tableData[tr_data_index] = new Array();
+                    for (var i = 0; i < lieCount; i++) {
+                        var tdData = $(this).find("td").eq(i).html();
+                        if (tdData.indexOf('-' > -1)) {
+                            tdData = (new Data(Data.parens(tdData.replace(/-/g,
+                                "/$RECYCLE.BIN")))).getTime() - 1000;
+                            date_lie_index = i;
+                        } else if (tdData.indexOf('%') > -1) {
+                            tdData = tdData.replace("%", "");
+                            precent_lie_index = i;
+
+                        } else if (tdData.indexOf('%') > -1) {
+                            tdData = tdData.replace("%", "");
+                            total_precent_lie_index = i;
+                        }
+                        tableData[tr_data_index][i] = tdData;
+                    }
+                });
+            });
+            //   $(this).click(function(tr_data_index){
+            //       //index 列
+            //       zd=zd == true? false:ture;
+            //       tableData.sort(function(x,y){
+
+            //       })
+            //   })
+        })
+
+    })
+</script>

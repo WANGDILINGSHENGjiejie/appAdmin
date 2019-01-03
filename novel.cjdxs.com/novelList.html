@@ -58,23 +58,59 @@
             </div>
         </nav> <!-- END NAVBAR -->
         <!-- LEFT SIDEBAR -->
-        <!-- <div id="sidebar-nav" class="sidebar">
+        <div id="sidebar-nav" class="sidebar">
             <div class="sidebar-scroll" style="overflow-y: auto;height: 100%;padding:20px 0;">
                 <nav>
                     <ul class="nav">
-                        <li><a href="./personalInformation.html" class="active" id="noticemenu"><i class="far fa-smile"></i><span
+                        <li><a href="./personalInformation.html" id="noticemenu"><i class="far fa-smile"></i><span
                                     class="menu-span">个人信息</span></a></li>
                         <li><a href="./DataGaikuan.html"><i class="fa fa-line-chart" aria-hidden="true"></i><span class="menu-span">数据概况</span></a></li>
 
-                        <li><a href="/order/summary"><i class="far fa-user" aria-hidden="true"></i><span class="menu-span">用户管理</span></a>
+                        <li>
+                                <ul class="nav nav-pills">
+                                        <li role="presentation" class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"  
+                                                aria-haspopup="true" aria-expanded="false" style="padding:0 0 0 28px;">
+                                                <i class="far fa-user" aria-hidden="true"></i> 用户管理 <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="./userList.html"><i class="far fa-file" aria-hidden="true"></i><span
+                                                            class="menu-span">用户列表</span></a>
+                                                </li>
+                                                <li><a href="./commentList.html"><i class="far fa-file" aria-hidden="true"></i><span
+                                                            class="menu-span">评论列表</span></a></li>
+                                                <li><a href="./CommentBackList.html"><i class="far fa-file" aria-hidden="true"></i><span
+                                                            class="menu-span">评论回复表</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                         </li>
-                        <li><a href="/book/index?sex=1"><i class="fa fa-book" aria-hidden="true"></i><span class="menu-span">小说管理</span></a>
+                        <li>
+                                <ul class="nav nav-pills">
+                                        <li role="presentation" class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                                aria-haspopup="true" aria-expanded="false" style="padding:0 0 0 28px;">
+                                                <i class="fa fa-book" aria-hidden="true"></i> 小说管理 <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="./novelList.html"><i class="far fa-file" aria-hidden="true"></i><span
+                                                            class="menu-span">小说列表</span></a>
+                                                </li>
+                                                <li><a href="./novelType.html"><i class="far fa-file" aria-hidden="true"></i><span
+                                                            class="menu-span">小说类型</span></a>
+
+                                                        </li>
+                                                <li><a href="./novelTable.html"><i class="far fa-file" aria-hidden="true"></i><span
+                                                            class="menu-span">小说标签</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                         </li>
                     </ul>
                 </nav>
             </div>
 
-        </div> -->
+        </div>
         <div class="main">
             <div class="main-content">
                 <div class="container-fluid">
