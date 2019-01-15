@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>笔墨文学 - 小说列表</title>
+    <title>笔墨文学 - 修改小说</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
     <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
@@ -156,158 +156,105 @@
                         <div class="panel-heading mynav">
                             <h3 class="panel-title">
                                 <i class="fa fa-home" aria-hidden="true"></i>首页 &gt;
-                                <h7 class="menu-name">小说列表</h7>
+                                <h7 class="menu-name">修改小说</h7>
                             </h3>
                         </div>
                         <!--TITLE END-->
 
                         <!--SEARCH-->
                         <div class="panel-body">
-                            <form class="form-inline" action="/fans/index" method="get" style="padding-bottom: 20px;">
-                                <div class="btn-group form-group">
-                                        <button type="button" class="btn btn-success dropdown-toggle" onclick="layerUItest()" style="background-color:#1890ff;border: #1890ff;"> 添加小说 </button>
-                                    </div>
-                                <div class="form-group">
-                                        <select id="form-subscribe" class="form-control" name="status">
-                                            <option value="1">选择状态</option>
-                                            <option value="2">上架</option>
-                                            <option value="3">下架</option>
-                                            <option value="4">待上架</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                            <select id="form-subscribe" class="form-control" name="status">
-                                                <option value="1">选择频道</option>
-                                                <option value="2">男频</option>
-                                                <option value="3">女频</option>
-                                            </select>
+                                <form class="form-horizontal" id="editform">
+                                       
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">排序</label>
+                                            <div class="col-sm-5">
+                                                <input type="password" class="form-control" id="password1" name="newpass"
+                                                    placeholder="单行输入">
+                                            </div>
                                         </div>
-                                            <div class="form-group">
-                                                    <input class="form-control" placeholder="ID,书名，作者" type="text" id="form-key" name="key"
-                                                        value="">
-                                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">搜索</button>
-                                </div>
-                            </form>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">书名ID</label>
+                                            <div class="col-sm-5">
+                                                <input type="password" class="form-control" id="password1" name="newpass"
+                                                    placeholder="单行输入">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">书名</label>
+                                            <div class="col-sm-8" style="margin-top: 7px;">
+                                                <span>根据ID显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">男/女频</label>
+                                            <div class="col-sm-8" style="margin-top: 7px;">
+                                                <span>根据ID显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">作者</label>
+                                            <div class="col-sm-8" style="margin-top: 7px;">
+                                                <span>根据ID显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">标签</label>
+                                            <div class="col-sm-8" style="margin-top: 7px;">
+                                                <span>根据ID显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">阅读数</label>
+                                            <div class="col-sm-5">
+                                                <input type="password" class="form-control" id="password1" name="newpass"
+                                                    placeholder="根据ID显示,可修改">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">简介</label>
+                                            <div class="col-sm-8" style="margin-top: 7px;">
+                                                <span>根据ID显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">小说封面</label>
+                                            <div class="col-sm-5">
+                                                <img src="./static/picture/20180628144157432.jpg" style="width:50px;">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">标题</label>
+                                            <div class="col-sm-5">
+                                                <input type="password" class="form-control" id="password1" name="newpass"
+                                                    placeholder="单行输入">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">描述</label>
+                                            <div class="col-sm-5">
+                                                <input type="password" class="form-control" id="password1" name="newpass"
+                                                    placeholder="单行输入">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-3 control-label">图片</label>
+                                            <div class="col-sm-5">
+                                                <input type="file">
+                                            </div>
+                                        </div>
+                                            <label for="inputPassword3" class="col-sm-3 control-label"></label>
+                                            <div class="col-sm-1">
+                                                <button type="button" id="submit" class="btn btn-success" style="width:100px;background-color: #5677fc;border: #5677fc;">保存</button>
+                                                <span class="green tipmsg">&nbsp;</span>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button type="button" id="submit" class="btn btn-success" style="width:100px;background-color: #5677fc;border: #5677fc;">取消</button>
+                                                <span class="green tipmsg">&nbsp;</span>
+                                            </div>
+                                        </div>
+    
+                                    </form>
                             <!--SEARCH END-->
-
-
-                            <!--TABLE -->
-                            <table  class="table table-striped table-hover table-bordered" style="font-size:14px;text-align:center;">
-                                <thead>
-                                    <tr>
-                                        <th width="5%">ID</th>
-                                        <th width="10%">名称</th>
-                                        <th width="10%">作者 </th>
-                                        <th width="6%">进度</th>
-                                        <th width="6%" >状态</th>
-                                        <th width="6%" >性别频度</th>
-                                        <th width="6%">分类</th>
-                                        <th width="6%">费用</th>
-                                        <th width="10%">封面</th>
-                                        <th width="35%">操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>125</td>
-                                        <td>
-                                           <span>天眼神医</span>
-                                        </td>
-                                        <td><span>铜都小狗</span></td>
-                                        <td><span>已完结</span></td>
-                                        <td> <span>上架</span> </td>
-                                        <td><span>男频</span></td>
-                                        <td><span>都市</span></td>
-                                        <td><span>收费</span></td>
-                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
-                                        <td>
-                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
-                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
-                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
-                                            <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>125</td>
-                                        <td>
-                                           <span>天眼神医</span>
-                                        </td>
-                                        <td><span>铜都小狗</span></td>
-                                        <td><span>已完结</span></td>
-                                        <td> <span>上架</span> </td>
-                                        <td><span>男频</span></td>
-                                        <td><span>都市</span></td>
-                                        <td><span>收费</span></td>
-                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
-                                        <td>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>    
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>125</td>
-                                        <td>
-                                           <span>天眼神医</span>
-                                        </td>
-                                        <td><span>铜都小狗</span></td>
-                                        <td><span>已完结</span></td>
-                                        <td> <span>上架</span> </td>
-                                        <td><span>男频</span></td>
-                                        <td><span>都市</span></td>
-                                        <td><span>收费</span></td>
-                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
-                                        <td>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>    
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>125</td>
-                                        <td>
-                                           <span>天眼神医</span>
-                                        </td>
-                                        <td><span>铜都小狗</span></td>
-                                        <td><span>已完结</span></td>
-                                        <td> <span>上架</span> </td>
-                                        <td><span>男频</span></td>
-                                        <td><span>都市</span></td>
-                                        <td><span>收费</span></td>
-                                        <td> <img src="./static/picture/20180628144157432.jpg" style="width:50px;"></td>
-                                        <td>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">章节</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">修改信息</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">删除</button>
-                                                <button type="submit" class="btn " style="background-color:#1890ff;color:#fff;">更新缓存</button>    
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!--TABLE END-->
-                            <div data-pagination="pagination_new" data-pagenumber="1" data-paginationurl="/fans/index?page=customize_page_num"
-                                data-totalnumber="3702" data-paginationmax="10" style="float: right;">
-                                <ul class="pagination">
-                                    <li value="pre" style="display: inline-block;"><a href="/fans/index?page=1">首页</a></li>
-                                    <li value="1" class="active" style="display: inline-block;"><a href="/fans/index?page=1">1</a></li>
-                                    <li value="2" style="display: inline-block;"><a href="/fans/index?page=2">2</a></li>
-                                    <li value="3" style="display: inline-block;"><a href="/fans/index?page=3">3</a></li>
-                                    <li value="4" style="display: inline-block;"><a href="/fans/index?page=4">4</a></li>
-                                    <li value="5" style="display: inline-block;"><a href="/fans/index?page=5">5</a></li>
-                                    <li value="6" style="display: inline-block;"><a href="/fans/index?page=6">6</a></li>
-                                    <li value="7" style="display: inline-block;"><a href="/fans/index?page=7">7</a></li>
-                                    <li value="8" style="display: inline-block;"><a href="/fans/index?page=8">8</a></li>
-                                    <li value="9" style="display: inline-block;"><a href="/fans/index?page=9">9</a></li>
-                                    <li value="10" style="display: inline-block;"><a href="/fans/index?page=10">10</a></li>
-                                    <li value="11" style="display: none;"><a href="/fans/index?page=11">11</a></li>
-                                    <li value="pre" style="display: inline-block;"><a href="/fans/index?page=1">尾页</a></li>
-
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
